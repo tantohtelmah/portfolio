@@ -23,8 +23,14 @@ def create_app():
     mail.init_app(app)
 
     # Register routes
-    from app.routes.contact_routes import contact_bp
-    from app.routes.resume_routes import resume_bp
+    try:
+        from backend.app.routes.contact_routes import contact_bp
+        from backend.app.routes.resume_routes import resume_bp
+        from backend.app.config import Config
+    except ModuleNotFoundError:
+        from app.routes.contact_routes import contact_bp
+        from app.routes.resume_routes import resume_bp
+        from app.config import Config
 
     app.register_blueprint(contact_bp)
     app.register_blueprint(resume_bp)
