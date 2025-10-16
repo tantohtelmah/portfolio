@@ -1,0 +1,14 @@
+/* src/index.css */
+
+/* Reset & global defaults */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa; /* Bootstrap light background */
+  color: #212529;
+}
+
+/* You can override Bootstrap defaults here if needed */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}

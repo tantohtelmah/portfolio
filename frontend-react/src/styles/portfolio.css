@@ -1,0 +1,63 @@
+:root {
+  --primary: #0b3d91;
+  --accent: #ff7a00;
+  --bg-light: #f9f9fb;
+  --bg-dark: #121212;
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+}
+
+/* Global body colors handled here */
+body.light-mode {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Generic section padding */
+section {
+  padding: 5rem 0;
+}
+
+/* Reusable accent border */
+.card-accent {
+  border-top: 3px solid var(--accent);
+}
+
+/* Hero image glow */
+.profile-glow {
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* Skills hover */
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent);
+  transition: all 0.3s ease-in-out;
+}
+
+/* VOYAG gallery */
+.voyag-gallery img {
+  border-radius: 10px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.voyag-gallery img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+/* Social icons */
+.social-links a {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: var(--primary);
+}
