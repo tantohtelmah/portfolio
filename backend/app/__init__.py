@@ -21,13 +21,20 @@ def create_app():
     from app.routes.contact_routes import contact_bp
     app.register_blueprint(contact_bp, url_prefix="/api/contact")
 
-    # Serve frontend files
     @app.route("/", defaults={"path": ""})
     @app.route("/<path:path>")
     def serve_frontend(path):
+        print("📂 Requested path:", path)
         full_path = os.path.join(app.static_folder, path)
-        if os.path.exists(full_path):
+
+        if path != "" and os.path.exists(full_path):
+            print("✅ Found file:", full_path)
             return send_from_directory(app.static_folder, path)
+
+    # Always serve index.html for "/" or unknown paths
+        print("⚠️ Serving index.html instead")
         return send_from_directory(app.static_folder, "index.html")
+
+
 
     return app

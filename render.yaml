@@ -9,9 +9,9 @@ services:
       cd frontend-react
       npm install
       npm run build
-      # ✅ Copy the built frontend into Flask’s static folder
-      mkdir -p ../backend/app/static/dist
-      cp -r dist/* ../backend/app/static/dist/
+      cd ..
+      mkdir -p backend/app/static/dist
+      cp -r frontend-react/dist/* backend/app/static/dist/
 
     startCommand: cd backend && gunicorn wsgi:app
 
