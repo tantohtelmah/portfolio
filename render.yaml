@@ -10,7 +10,7 @@ services:
       npm install
       npm run build
 
-    startCommand: gunicorn backend.wsgi:app
+    startCommand: cd backend && gunicorn wsgi:app
 
     envVars:
       - key: PYTHONPATH
