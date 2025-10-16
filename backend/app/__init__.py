@@ -14,7 +14,7 @@ def create_app():
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     # Config
-    app.config.from_object("backend.app.config.Config")
+    app.config.from_object("app.config.Config")
     mail.init_app(app)
 
     # Import and register blueprints once
