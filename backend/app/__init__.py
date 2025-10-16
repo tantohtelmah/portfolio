@@ -18,7 +18,7 @@ def create_app():
     mail.init_app(app)
 
     # Import and register blueprints once
-    from backend.app.routes.contact_routes import contact_bp
+    from app.routes.contact_routes import contact_bp
     app.register_blueprint(contact_bp, url_prefix="/api/contact")
 
     # Serve frontend files
