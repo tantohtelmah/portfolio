@@ -10,7 +10,7 @@ def create_app():
     frontend_path = os.path.join(os.path.dirname(__file__), "../../frontend-react/dist")
     frontend_path = os.path.abspath(frontend_path)
 
-    app = Flask(__name__, static_folder=frontend_path, static_url_path="/")
+    app = Flask(__name__, static_folder="static/dist", static_url_path="/")
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     # Config
