@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, current_app
 from flask_mail import Message
-from backend.app  import mail
+from app  import mail
 
 contact_bp = Blueprint("contact", __name__)
 
