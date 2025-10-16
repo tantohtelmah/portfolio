@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__)
 
     # Load configuration
-    app.config.from_object("app.config.Config")
+    app.config.from_object("backend.app.config.Config")
 
     # Enable CORS for frontend (React runs on port 5173)
     CORS(
